@@ -3,7 +3,7 @@ const express = require('express');
 const expressGraphQL = require('express-graphql');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-// const schema = require('./schema/schema');
+const schema = require('./schema/schema');
 
 const app = express();
 
@@ -21,7 +21,7 @@ mongoose.connection
 
 app.use(bodyParser.json());
 app.use('/graphql', expressGraphQL({
-  // schema,
+  schema,
   graphiql: true
 }));
 

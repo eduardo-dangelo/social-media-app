@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './app/App';
+import App from './app/App';
 
 const Root = () => {
   return (
-    <h2>hello word</h2>
+    <div>
+      <App/>
+    </div>
   );
 };
 

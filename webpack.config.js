@@ -9,9 +9,12 @@ module.exports = {
   module: {
     rules: [
       {
-        use: 'babel-loader',
-        test: [/\.jsx?$/, /\.js?$/ ],
-        exclude: /node_modules/
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: require.resolve('babel-loader'),
+        options: {
+          cacheDirectory: true,
+        },
       },
     ]
   },
