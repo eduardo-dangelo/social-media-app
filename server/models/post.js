@@ -3,31 +3,33 @@ const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
   title: { type: String },
-  message: { type: String }
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'user'
+  },
+  message: { type: String },
+  comments: [{
+    type: Schema.Types.ObjectId,
+    ref: 'comment'
+  }],
 });
 
-PostSchema.statics.findLyrics = function(id) {
-  return this.findById(id)
-    .populate('lyrics')
-    .then(song => song.lyrics);
-}
-
-SongSchema.statics.addLyric = function(id, content) {
-  const Lyric = mongoose.model('lyric');
+PostSchema.statics.addComment = function(id, content) {
+  const Comment = mongoose.model('comment');
 
   return this.findById(id)
-    .then(song => {
-      const lyric = new Lyric({ content, song })
-      song.lyrics.push(lyric)
-      return Promise.all([lyric.save(), song.save()])
-        .then(([lyric, song]) => song);
+    .then(post => {
+      const comment = new Comment({ content, post })
+      post.comments.push(comment)
+      return Promise.all([comment.save(), post.save()])
+        .then(([comment, post]) => post);
     });
 }
 
-SongSchema.statics.findLyrics = function(id) {
+PostSchema.statics.findComments = function(id) {
   return this.findById(id)
-    .populate('lyrics')
-    .then(song => song.lyrics);
+    .populate('comments')
+    .then(post => post.comments);
 }
 
 mongoose.model('post', PostSchema);

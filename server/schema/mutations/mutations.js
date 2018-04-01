@@ -1,5 +1,3 @@
-import {GraphQLID} from "graphql";
-
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLID } = graphql;
 const PostType = require('../types/postType');
@@ -9,7 +7,7 @@ const Post = mongoose.model('post');
 const mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
-    post: {
+    addPost: {
       type: PostType,
       args: {
         title: { type: GraphQLString },
@@ -19,14 +17,14 @@ const mutation = new GraphQLObjectType({
         return (new Post({ title, message })).save()
       }
     },
-    comment: {
+    addCommentToPost: {
       type: PostType,
       args: {
         content: { type: GraphQLString },
         postId: { type: GraphQLID }
       },
       resolve(parentValue, { content, postId }) {
-        return Post.comment(postId, content);
+        return Post.addComment(postId, content);
       }
     },
   }
