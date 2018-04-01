@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Comment = mongoose.model('comment');
 const CommentType = require('./commentType');
 const Post = mongoose.model('post');
+const User = mongoose.model('user');
 const PostType = require('./postType');
 const UserType = require('./userType');
 
@@ -14,6 +15,12 @@ const RootQueryType = new GraphQLObjectType({
       type: UserType,
       resolve(parentValue, args, req) {
         return req.user;
+      }
+    },
+    users: {
+      type: new GraphQLList(UserType),
+      resolve() {
+        return User.find({});
       }
     },
     posts: {
