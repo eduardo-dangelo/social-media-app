@@ -6,15 +6,17 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const MongoStore = require('connect-mongo')(session);
 const schema = require('./schema/schema');
+const passport = require('passport');
+const passportConfig = require('./services/auth');
 
 const app = express();
 
 // Replace with your mongoLab URI
 const MONGO_URI = 'mongodb://eduardo:test@ds263948.mlab.com:63948/user-auth';
 
-console.log('/---------------------------------/')
-console.log('/--------SOCIAL-MEDIA-APP----V1---/')
-console.log('/---------------------------------/')
+console.log('/-----------------------------------------------------/')
+console.log('/------------------SOCIAL-MEDIA-APP-------------------/')
+console.log('/-----------------------------------------------------/')
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URI, { promiseLibrary: global.Promise });
@@ -50,6 +52,9 @@ app.use(session({
     autoReconnect: true
   })
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // app.use(bodyParser.json());
 app.use('/graphql', expressGraphQL({

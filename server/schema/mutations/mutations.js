@@ -2,13 +2,45 @@ const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLID } = graphql;
 const PostType = require('../types/postType');
 const CommentType = require('../types/commentType');
+const UserType = require('../types/userType');
 const mongoose = require('mongoose');
 const Post = mongoose.model('post');
 const Comment = mongoose.model('comment');
+const AuthService = require('../../services/auth');
 
 const mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
+    // AUTH
+    signup: {
+      type: UserType,
+      args: {
+        email: { type: GraphQLString },
+        password: { type: GraphQLString }
+      },
+      resolve(parentValue, { email, password }, req) {
+        return AuthService.signup({ email, password, req });
+      }
+    },
+    logout: {
+      type: UserType,
+      resolve(parentValue, args, req) {
+        const { user } = req;
+        req.logout();
+        return user;
+      }
+    },
+    login: {
+      type: UserType,
+      args: {
+        email: { type: GraphQLString },
+        password: { type: GraphQLString }
+      },
+      resolve(parentValue, { email, password }, req) {
+        return AuthService.login({ email, password, req });
+      }
+    },
+    // POST
     addPost: {
       type: PostType,
       args: {
@@ -40,6 +72,7 @@ const mutation = new GraphQLObjectType({
         return Post.remove({ _id: id })
       }
     },
+    // COMMENT
     addCommentToPost: {
       type: PostType,
       args: {
@@ -70,7 +103,7 @@ const mutation = new GraphQLObjectType({
       resolve(parentValue, { id }) {
         return Comment.remove({ _id: id })
       }
-    }
+    },
   }
 });
 
