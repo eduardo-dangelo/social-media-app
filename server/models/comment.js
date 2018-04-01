@@ -6,18 +6,18 @@ const CommentSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'post'
   },
-  // likes: { type: Number, default: 0 },
+  likes: { type: Number, default: 0 },
   content: { type: String }
 });
 
-// LyricSchema.statics.like = function(id) {
-//   const Lyric = mongoose.model('lyric');
-//
-//   return Lyric.findById(id)
-//     .then(lyric => {
-//       ++lyric.likes;
-//       return lyric.save();
-//     })
-// }
+CommentSchema.statics.like = function(id) {
+  const Comment = mongoose.model('comment');
+
+  return Comment.findById(id)
+    .then(comment => {
+      ++comment.likes;
+      return comment.save();
+    })
+}
 
 mongoose.model('comment', CommentSchema);
