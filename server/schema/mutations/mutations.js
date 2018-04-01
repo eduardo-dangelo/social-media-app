@@ -23,10 +23,10 @@ const mutation = new GraphQLObjectType({
       type: PostType,
       args: {
         content: { type: GraphQLString },
-        postId: { type: GraphQLID }
+        id: { type: GraphQLID }
       },
-      resolve(parentValue, { content, postId }) {
-        return Post.addComment(postId, content);
+      resolve(parentValue, { content, id }) {
+        return Post.addComment(id, content);
       }
     },
     likePost: {
@@ -43,6 +43,20 @@ const mutation = new GraphQLObjectType({
         return Comment.like(id);
       }
     },
+    deletePost: {
+      type: PostType,
+      args: { id: { type: GraphQLID } },
+      resolve(parentValue, { id }) {
+        return Post.remove({ _id: id })
+      }
+    },
+    deleteComment: {
+      type: CommentType,
+      args: { id: { type: GraphQLID } },
+      resolve(parentValue, { id }) {
+        return Comment.remove({ _id: id })
+      }
+    }
   }
 });
 
