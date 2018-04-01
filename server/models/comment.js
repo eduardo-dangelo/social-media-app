@@ -20,4 +20,14 @@ CommentSchema.statics.like = function(id) {
     })
 }
 
+CommentSchema.statics.unlike = function(id) {
+  const Comment = mongoose.model('comment');
+
+  return Comment.findById(id)
+    .then(comment => {
+      --comment.likes;
+      return comment.save();
+    })
+}
+
 mongoose.model('comment', CommentSchema);

@@ -43,4 +43,14 @@ PostSchema.statics.like = function(id) {
     })
 }
 
+PostSchema.statics.unlike = function(id) {
+  const Post = mongoose.model('post');
+
+  return Post.findById(id)
+    .then(post => {
+      --post.likes;
+      return post.save();
+    })
+}
+
 mongoose.model('post', PostSchema);
