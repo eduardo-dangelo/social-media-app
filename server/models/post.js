@@ -3,11 +3,12 @@ const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
   title: { type: String },
-  // user: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'user'
-  // },
-  message: { type: String },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'user'
+  },
+  userId: { type: Schema.Types.ObjectId },
+  content: { type: String },
   likes: { type: Number, default: 0 },
   comments: [{
     type: Schema.Types.ObjectId,
@@ -31,6 +32,17 @@ PostSchema.statics.findComments = function(id) {
   return this.findById(id)
     .populate('comments')
     .then(post => post.comments);
+}
+
+PostSchema.statics.findUser = function(id) {
+  const User = mongoose.model('user');
+  return this.findById(id)
+    .then(post => {
+      const user = User()
+      post.user.push(user)
+      return Promise.all([user.save(), post.save()])
+        .then(([user, post]) => post);
+    });
 }
 
 PostSchema.statics.like = function(id) {

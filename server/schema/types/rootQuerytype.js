@@ -36,7 +36,7 @@ const RootQueryType = new GraphQLObjectType({
         return Post.findById(id);
       }
     },
-    lyric: {
+    comment: {
       type: CommentType,
       args: { id: { type: new GraphQLNonNull(GraphQLID) } },
       resolve(parentValue, { id }) {

@@ -9,7 +9,11 @@ const UserSchema = new Schema({
   firstName: String,
   lastName: String,
   email: String,
-  password: String
+  password: String,
+  // posts: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'post'
+  // }],
 });
 
 // The user's password is never saved in plain text.  Prior to saving the
@@ -29,6 +33,18 @@ UserSchema.pre('save', function save(next) {
     });
   });
 });
+
+UserSchema.statics.loadUser = function(id) {
+  return this.findById(id)
+    // .populate('user')
+    .then(user => user);
+}
+
+// UserSchema.statics.findPosts = function(id) {
+//   return this.findById(id)
+//     .populate('posts')
+//     .then(user => user.posts);
+// }
 
 // We need to compare the plain text password (submitted whenever logging in)
 // with the salted + hashed version that is sitting in the database.

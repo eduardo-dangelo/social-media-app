@@ -47,10 +47,11 @@ const mutation = new GraphQLObjectType({
       type: PostType,
       args: {
         title: { type: GraphQLString },
-        message: { type: GraphQLString }
+        content: { type: GraphQLString },
+        userId: { type: GraphQLID }
       },
-      resolve(parentValue, { title, message }) {
-        return (new Post({ title, message })).save()
+      resolve(parentValue, { title, content, userId }) {
+        return (new Post({ title, content, userId })).save()
       }
     },
     likePost: {
