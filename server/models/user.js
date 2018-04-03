@@ -40,11 +40,22 @@ UserSchema.statics.loadUser = function(id) {
     .then(user => user);
 }
 
-// UserSchema.statics.findPosts = function(id) {
+// UserSchema.statics.loadPosts = function(id) {
+//   const Post = mongoose.model('post');
 //   return this.findById(id)
-//     .populate('posts')
-//     .then(user => user.posts);
+//     .then(user => {
+//       const post = Post()
+//       user.posts.push(post)
+//       return Promise.all([post.save(), user.save()])
+//         .then(([post, user]) => user);
+//     });
 // }
+
+UserSchema.statics.findPosts = function(post) {
+  return this.findById(post.user.id)
+    .populate('posts')
+    .then(user => user.posts);
+}
 
 // We need to compare the plain text password (submitted whenever logging in)
 // with the salted + hashed version that is sitting in the database.

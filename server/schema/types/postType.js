@@ -8,7 +8,7 @@ const User = mongoose.model('user');
 
 const PostType = new GraphQLObjectType({
   name: 'PostType',
-  fields: {
+  fields: () => ({
     id: { type: GraphQLID },
     title: { type: GraphQLString },
     content: { type: GraphQLString },
@@ -26,7 +26,38 @@ const PostType = new GraphQLObjectType({
         return Post.findComments(parentValue.id)
       }
     }
-  }
+  })
 });
 
 module.exports = PostType;
+
+// const mongoose = require('mongoose');
+// const graphql = require('graphql');
+// const {
+//   GraphQLObjectType,
+//   // GraphQLList,
+//   GraphQLID,
+//   GraphQLInt,
+//   GraphQLString
+// } = graphql;
+// const Comment = mongoose.model('comment');
+//
+// const PostType = new GraphQLObjectType({
+//   name:  'PostType',
+//   fields: () => ({
+//     id: { type: GraphQLID },
+//     title: { type: GraphQLString },
+//     content: { type: GraphQLString },
+//     post: {
+//       type: require('./postType'),
+//       resolve(parentValue) {
+//         return Comment.findById(parentValue).populate('post')
+//           .then(comment => {
+//             return comment.post
+//           });
+//       }
+//     }
+//   })
+// });
+//
+// module.exports = CommentType;

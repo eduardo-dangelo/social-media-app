@@ -1,23 +1,25 @@
-const graphql = require('graphql');
 const mongoose = require('mongoose');
+const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList } = graphql;
 const User = mongoose.model('user');
-const PostType = require('./postType');
+const Post = mongoose.model('post');
+const postType = require('./postType');
+const commentType = require('./commentType');
 
 const UserType = new GraphQLObjectType({
-  name: 'UserType',
-  fields: {
+  name: 'User',
+  fields: () =>  ({
     id: { type: GraphQLID },
     firstName: { type: GraphQLString },
     lastName: { type: GraphQLString },
     email: { type: GraphQLString },
     // posts: {
-    //   type: new GraphQLList(PostType),
+    //   type: new GraphQLList(postType),
     //   resolve(parentValue) {
-    //     return User.findPosts(parentValue.id)
+    //     return User.findPosts(parentValue);
     //   }
     // }
-  }
+  })
 });
 
 module.exports = UserType;

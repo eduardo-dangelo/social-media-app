@@ -107,6 +107,18 @@ const mutation = new GraphQLObjectType({
         return Comment.remove({ _id: id })
       }
     },
+    //
+    // openChat: {
+    //   type: PostType,
+    //   args: {
+    //     title: { type: GraphQLString },
+    //     content: { type: GraphQLString },
+    //     userId: { type: GraphQLID }
+    //   },
+    //   resolve(parentValue, { title, content, userId }) {
+    //     return (new Post({ title, content, userId })).save()
+    //   }
+    // },
   }
 });
 
