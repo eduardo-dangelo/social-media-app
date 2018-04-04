@@ -1,0 +1,16 @@
+.auth-container {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+}
+
+.auth-box {
+  border: 1px solid darkred;
+  padding: 15px;
+  width: 100%;
+  margin: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}

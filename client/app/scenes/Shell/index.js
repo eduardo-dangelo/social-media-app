@@ -9,7 +9,9 @@ class Shell extends React.Component {
     return (
       <div className="shell">
         <Header/>
-        {children}
+        <div className="container">
+          {children}
+        </div>
         <Footer/>
       </div>
     )
