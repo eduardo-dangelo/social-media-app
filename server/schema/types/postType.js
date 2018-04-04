@@ -16,7 +16,6 @@ const PostType = new GraphQLObjectType({
     user: {
       type: UserType,
       resolve(parentValue, args, req) {
-        console.log('parentValue', parentValue)
         return User.loadUser(parentValue.userId)
       }
     },

@@ -3,15 +3,19 @@ const { GraphQLObjectType, GraphQLString, GraphQLID } = graphql;
 const PostType = require('../types/postType');
 const CommentType = require('../types/commentType');
 const UserType = require('../types/userType');
+const ChatType = require('../types/chatType');
 const mongoose = require('mongoose');
 const Post = mongoose.model('post');
 const Comment = mongoose.model('comment');
+const Chat = mongoose.model('chat');
 const AuthService = require('../../services/auth');
 
 const mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
+
     // AUTH
+
     signup: {
       type: UserType,
       args: {
@@ -24,6 +28,7 @@ const mutation = new GraphQLObjectType({
         return AuthService.signup({ email, password, firstName, lastName, req });
       }
     },
+
     logout: {
       type: UserType,
       resolve(parentValue, args, req) {
@@ -32,6 +37,7 @@ const mutation = new GraphQLObjectType({
         return user;
       }
     },
+
     login: {
       type: UserType,
       args: {
@@ -42,7 +48,9 @@ const mutation = new GraphQLObjectType({
         return AuthService.login({ email, password, req });
       }
     },
+
     // POST
+
     addPost: {
       type: PostType,
       args: {
@@ -54,6 +62,7 @@ const mutation = new GraphQLObjectType({
         return (new Post({ title, content, userId })).save()
       }
     },
+
     likePost: {
       type: PostType,
       args: { id: { type: GraphQLID } },
@@ -61,6 +70,7 @@ const mutation = new GraphQLObjectType({
         return Post.like(id);
       }
     },
+
     unlikePost: {
       type: PostType,
       args: { id: { type: GraphQLID } },
@@ -68,6 +78,7 @@ const mutation = new GraphQLObjectType({
         return Post.unlike(id);
       }
     },
+
     deletePost: {
       type: PostType,
       args: { id: { type: GraphQLID } },
@@ -75,7 +86,9 @@ const mutation = new GraphQLObjectType({
         return Post.remove({ _id: id })
       }
     },
+
     // COMMENT
+
     addCommentToPost: {
       type: PostType,
       args: {
@@ -86,6 +99,7 @@ const mutation = new GraphQLObjectType({
         return Post.addComment(id, content);
       }
     },
+
     likeComment: {
       type: CommentType,
       args: { id: { type: GraphQLID } },
@@ -93,6 +107,7 @@ const mutation = new GraphQLObjectType({
         return Comment.like(id);
       }
     },
+
     unlikeComment: {
       type: CommentType,
       args: { id: { type: GraphQLID } },
@@ -100,6 +115,7 @@ const mutation = new GraphQLObjectType({
         return Comment.unlike(id);
       }
     },
+
     deleteComment: {
       type: CommentType,
       args: { id: { type: GraphQLID } },
@@ -107,18 +123,47 @@ const mutation = new GraphQLObjectType({
         return Comment.remove({ _id: id })
       }
     },
-    //
-    // openChat: {
-    //   type: PostType,
-    //   args: {
-    //     title: { type: GraphQLString },
-    //     content: { type: GraphQLString },
-    //     userId: { type: GraphQLID }
-    //   },
-    //   resolve(parentValue, { title, content, userId }) {
-    //     return (new Post({ title, content, userId })).save()
-    //   }
-    // },
+
+    // CHAT
+
+    newChat: {
+      type: ChatType,
+      args: { userId: { type: GraphQLID } },
+      resolve(parentValue, { userId }) {
+        return (new Chat({ userId })).save()
+      }
+    },
+
+    addUserToChat: {
+      type: ChatType,
+      args: {
+        chatId: { type: GraphQLID },
+        userId: { type: GraphQLID },
+      },
+      resolve(parentValue, { chatId, userId }) {
+        return Chat.addUser(chatId, userId);
+      }
+    },
+
+    sendMessage: {
+      type: ChatType,
+      args: {
+        content: { type: GraphQLString },
+        chatId: { type: GraphQLID },
+        userId: { type: GraphQLID },
+      },
+      resolve(parentValue, { content, chatId, userId }) {
+        return Chat.sendMessage(chatId, userId, content);
+      }
+    },
+
+    deleteMessage: {
+      type: ChatType,
+      args: { id: { type: GraphQLID } },
+      resolve(parentValue, { id }) {
+        return Chat.remove({ _id: id })
+      }
+    },
   }
 });
 

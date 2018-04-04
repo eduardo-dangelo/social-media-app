@@ -5,8 +5,12 @@ const Comment = mongoose.model('comment');
 const CommentType = require('./commentType');
 const Post = mongoose.model('post');
 const User = mongoose.model('user');
+const Chat = mongoose.model('chat');
+const Message = mongoose.model('message');
 const PostType = require('./postType');
 const UserType = require('./userType');
+const ChatType = require('./chatType');
+const MessageType = require('./messageType');
 
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQueryType',
@@ -41,6 +45,26 @@ const RootQueryType = new GraphQLObjectType({
       args: { id: { type: new GraphQLNonNull(GraphQLID) } },
       resolve(parentValue, { id }) {
         return Comment.findById(id);
+      }
+    },
+    chats: {
+      type: new GraphQLList(ChatType),
+      resolve() {
+        return Chat.find({});
+      }
+    },
+    chat: {
+      type: ChatType,
+      args: { id: { type: new GraphQLNonNull(GraphQLID) } },
+      resolve(parentValue, { id }) {
+        return Chat.findById(id);
+      }
+    },
+    message: {
+      type: MessageType,
+      args: { id: { type: new GraphQLNonNull(GraphQLID) } },
+      resolve(parentValue, { id }) {
+        return Message.findById(id);
       }
     }
   }

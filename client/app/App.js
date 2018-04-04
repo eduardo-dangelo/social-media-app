@@ -1,10 +1,13 @@
 import React from 'react';
+import Shell from './scenes/Shell';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        Hello World
+        <Shell>
+          Hello World
+        </Shell>
       </div>
     )
   }
