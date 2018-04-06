@@ -12,7 +12,7 @@ const client = new ApolloClient({
 const Root = () => {
   return (
     <ApolloProvider client={client}>
-      <App/>
+      <App />
     </ApolloProvider>
   );
 };

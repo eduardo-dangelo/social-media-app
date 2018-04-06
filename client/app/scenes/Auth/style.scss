@@ -13,4 +13,23 @@
   width: 100%;
   margin: 15px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  position: relative;
+  //animation: fadeIn 2s ease-out;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    margin-top: 90px;
+  }
+
+  40% {
+    margin-top: -0px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 15px;
+  }
+
 }
