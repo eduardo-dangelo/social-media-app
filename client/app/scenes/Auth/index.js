@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.scss';
+import LogIn from './components/LogIn';
+import SignUp from './components/SignUp';
 import AuthForm from './components/AuthForm';
 
 class Auth extends React.Component {
@@ -11,15 +13,7 @@ class Auth extends React.Component {
     return (
       <div className="auth-container container">
         <div className="auth-box animate bounceInDown">
-          <button className="btn waves-effect waves-light" type="button" name="action">
-            Login
-            {/*<i className="mateiial-icons right">send</i>*/}
-          </button>
-          <button className="btn waves-effect waves-light" type="button" name="action">
-            Sign Up
-            {/*<i className="material-icons right">send</i>*/}
-          </button>
-          <AuthForm onSubmit={this.handleSubmit()}/>
+          <AuthForm authType="signUp" onSubmit={this.handleSubmit()}/>
         </div>
       </div>
     )

@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
+// import Header from './components/Header';
+// import Footer from './components/Footer';
 import './style.scss';
 
 class Shell extends React.Component {
@@ -8,11 +8,11 @@ class Shell extends React.Component {
     const { children } = this.props;
     return (
       <div className="shell">
-        <Header/>
+        {/*<Header/>*/}
         <div className="container">
           {children}
         </div>
-        <Footer/>
+        {/*<Footer/>*/}
       </div>
     )
   }
