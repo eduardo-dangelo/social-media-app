@@ -4,7 +4,7 @@ class FormControl extends React.Component {
   renderField() {
     const { type, name, placeholder, value, onChange } = this.props;
 
-    if (type === 'string') {
+    if (type === 'text') {
       return (
         <input
           name={name}
@@ -14,12 +14,24 @@ class FormControl extends React.Component {
         />
       )
     }
+
+    if (type === 'password') {
+      return (
+        <input
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          type="password"
+          onChange={onChange}
+        />
+      )
+    }
   }
 
   render() {
     return (
       <div className="field-container">
-        {this.renderField}
+        {this.renderField()}
       </div>
     )
   }

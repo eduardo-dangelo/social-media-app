@@ -1,10 +1,8 @@
 import React from 'react';
-import './style.scss';
-// import LogIn from './components/LogIn';
-// import SignUp from './components/SignUp';
-import AuthForm from './components/AuthForm';
+// import './style.scss';
+import AuthForm from '../components/AuthForm';
 
-class Auth extends React.Component {
+class SignUp extends React.Component {
   handleSubmit(formValues) {
     console.log('formValues', formValues)
   }
@@ -20,4 +18,4 @@ class Auth extends React.Component {
   }
 }
 
-export default Auth
+export default SignUp;
