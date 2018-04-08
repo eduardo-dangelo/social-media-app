@@ -1,5 +1,6 @@
 import React from 'react';
 import FormControl from '../../../components/FormControl';
+import { Link } from 'react-router-dom';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -11,13 +12,13 @@ class AuthForm extends React.Component {
       email: '',
       password: '',
       passwordConfirmation: '',
-      authType: 'login',
+      // authType: 'login',
     }
   }
 
   render() {
-    const { handleSubmit } = this.props;
-    const { authType } = this.state;
+    const { handleSubmit, authType } = this.props;
+    // const { authType } = this.state;
     const signUp = authType === 'signUp';
     return (
       <div>
@@ -67,12 +68,14 @@ class AuthForm extends React.Component {
           <button className="btn waves-effect waves-light" type="submit" name="action">Submit
             <i className="material-icons right">send</i>
           </button>
-          {!signUp && (
-            <div onClick={() => this.setState({ authType: 'signUp'})}>Sign Up</div>
-          )}
-          {signUp && (
-            <div onClick={() => this.setState({ authType: 'login'})}>Log In</div>
-          )}
+          <div>
+            {!signUp && (
+              <Link to="/signup">Sign Up</Link>
+            )}
+            {signUp && (
+              <Link to="/">Log In</Link>
+            )}
+          </div>
         </form>
       </div>
     )

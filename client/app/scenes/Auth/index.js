@@ -14,6 +14,7 @@ class Auth extends React.Component {
       <div className="auth-container container">
         <div className="auth-box animate bounceInDown">
           <AuthForm authType="signUp" onSubmit={this.handleSubmit()}/>
+          auth
         </div>
       </div>
     )
