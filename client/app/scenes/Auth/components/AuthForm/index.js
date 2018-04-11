@@ -12,17 +12,27 @@ class AuthForm extends React.Component {
       email: '',
       password: '',
       passwordConfirmation: '',
-      // authType: 'login',
     }
   }
 
+  handleSubmit(event) {
+    const { firstName, lastName, email, password } = this.state;
+    event.preventDefault();
+
+    this.props.onSubmit({
+      firstName,
+      lastName,
+      email,
+      password,
+    });
+  }
+
   render() {
-    const { handleSubmit, authType } = this.props;
-    // const { authType } = this.state;
+    const { authType } = this.props;
     const signUp = authType === 'signUp';
     return (
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <h4>{signUp ? 'Sign Up' : 'Log In'}</h4>
           {signUp && (
             <div>
@@ -68,14 +78,6 @@ class AuthForm extends React.Component {
           <button className="btn waves-effect waves-light" type="submit" name="action">Submit
             <i className="material-icons right">send</i>
           </button>
-          <div>
-            {!signUp && (
-              <Link to="/signup">Sign Up</Link>
-            )}
-            {signUp && (
-              <Link to="/">Log In</Link>
-            )}
-          </div>
         </form>
       </div>
     )
