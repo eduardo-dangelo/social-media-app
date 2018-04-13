@@ -48,9 +48,9 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <nav>
+      <nav className="teal ">
         <div className="container">
-          <div className="nav-wrapper">
+          <div className="">
             <Link to="/" className=" left">
               <h5>Social Media App</h5>
             </Link>

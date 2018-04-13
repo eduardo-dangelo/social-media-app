@@ -31,14 +31,11 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log('this.props', this.props);
     return (
-      <div className="auth-container container">
-        <div className="auth-box animate bounceInDown">
-          <AuthForm authType="login" onSubmit={this.handleSubmit.bind(this)}/>
-        </div>
+      <div>
+        <AuthForm authType="login" onSubmit={this.handleSubmit.bind(this)}/>
       </div>
-    )
+    );
   }
 }
 

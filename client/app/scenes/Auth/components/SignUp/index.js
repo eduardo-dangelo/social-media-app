@@ -30,11 +30,7 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div className="auth-container container">
-        <div className="auth-box animate bounceInDown">
-          <AuthForm authType="signUp" onSubmit={this.handleSubmit.bind(this)}/>
-        </div>
-      </div>
+      <AuthForm authType="signUp" onSubmit={this.handleSubmit.bind(this)}/>
     )
   }
 }

@@ -1,10 +1,13 @@
 import React from 'react';
+import User from './components/User';
 
 class Dashborad extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Welome passero</h1>
+      <div className="row">
+        <div className="col s2">
+          <User/>
+        </div>
       </div>
     )
   }
