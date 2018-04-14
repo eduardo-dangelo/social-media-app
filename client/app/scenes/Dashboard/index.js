@@ -1,11 +1,11 @@
 import React from 'react';
 import User from './components/User';
 
-class Dashborad extends React.Component {
+class Dashboard extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col s2">
+        <div className="col s3">
           <User/>
         </div>
       </div>
@@ -13,4 +13,4 @@ class Dashborad extends React.Component {
   }
 }
 
-export default Dashborad
+export default Dashboard
