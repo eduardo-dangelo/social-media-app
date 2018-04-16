@@ -31,9 +31,15 @@ class Login extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
     return (
       <div>
-        <AuthForm authType="login" onSubmit={this.handleSubmit.bind(this)}/>
+        <AuthForm
+          authType="login"
+          errors={this.state.errors}
+          onSubmit={this.handleSubmit.bind(this)}
+          {...this.props}
+        />
       </div>
     );
   }

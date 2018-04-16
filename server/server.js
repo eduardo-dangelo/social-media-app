@@ -13,6 +13,7 @@ const app = express();
 
 // Replace with your mongoLab URI
 const MONGO_URI = 'mongodb://eduardo:test@ds263948.mlab.com:63948/user-auth';
+// const MONGO_URI = 'mongodb://eduardo-dangelo:V5^Sc4jjty@ds127129.mlab.com:27129/social-media-app';
 
 console.log('/------------------SOCIAL-MEDIA-APP-------------------/')
 

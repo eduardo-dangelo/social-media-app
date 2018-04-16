@@ -28,7 +28,8 @@ class AuthForm extends React.Component {
   }
 
   render() {
-    const { authType } = this.props;
+    const { authType, data } = this.props;
+    console.log('this.props', this.props)
     const signUp = authType === 'signUp';
     return (
       <div className="row page-content">
@@ -81,11 +82,11 @@ class AuthForm extends React.Component {
                 <div className="">
                   <button className="btn waves-effect waves-light" type="submit" name="action">Submit
                     <i className="material-icons right">send</i>
+                    {data.loading && 'Loading porra!'}
                   </button>
-                  {/*<a href="#">*/}
-                  {/*Submit*/}
-                  {/*/!*<i className="material-icons right">send</i>*!/*/}
-                  {/*</a>*/}
+                  {this.props.errors.map(error => {
+                    return (<div key={error}>{error}</div>);
+                  })}
                 </div>
               </form>
             </div>

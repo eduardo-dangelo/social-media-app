@@ -31,7 +31,12 @@ class SignUp extends React.Component {
   render() {
     return (
       <div>
-        <AuthForm authType="signUp" onSubmit={this.handleSubmit.bind(this)}/>
+        <AuthForm
+          authType="signUp"
+          errors={this.state.errors}
+          onSubmit={this.handleSubmit.bind(this)}
+          {...this.props}
+        />
       </div>
     );
   }
