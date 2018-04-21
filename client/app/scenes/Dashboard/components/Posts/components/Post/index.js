@@ -3,6 +3,8 @@ import { map } from 'lodash';
 import FormControl from "../../../../../components/FormControl";
 import { graphql } from 'react-apollo'
 import mutation from '../../../../../../mutations/AddCommentToPost'
+import CommentForm from './components/CommentForm';
+import CommentList from './components/CommentList';
 
 class Post extends React.Component {
   constructor(props) {
@@ -21,7 +23,9 @@ class Post extends React.Component {
     this.props.mutate({
       variables: { id: post.id, content: this.state.comment },
       refetchQueries: [{ query }],
-    })
+    }).then(
+      this.setState({ comment: '' }),
+    );
   }
 
   showComments() {
@@ -33,6 +37,7 @@ class Post extends React.Component {
   render() {
     const { post } = this.props;
     const { showComments } = this.state;
+    console.log('this.props.data', this.props.data)
 
     return (
       <div className="card blue-grey darken-1">
@@ -51,49 +56,14 @@ class Post extends React.Component {
           </a>
           <a className="comment-button" onClick={this.showComments.bind(this)}>
             {post.comments.length} comments
-            <i className="material-icons">chat</i>
+            <i className={`material-icons animated${showComments ? ' wobble' : ' pulse'}`}>{showComments ? 'chat' : 'chat_bubble'}</i>
           </a>
         </div>
         {showComments && (
-          <div>
-            {post.comments.length > 0 && (
-              <div className="card-content white-text blue-grey darken-2">
-                <div className="row">
-                  {map(post.comments, (comment, key) => {
-                    return (
-                      <div className="col sm12 m10 right card-panel blue-grey darken-1">
-                        <div className="card-content">
-                          {comment.content}
-                        </div>
-                        <div className="card-action">
-                          <a
-                            // onClick={() => this.handleLike(id, likes)}
-                            className="like-button"
-                          >
-                            <span>{post.likes}</span>
-                            {' '}
-                            <i className="material-icons">thumb_up</i>
-                          </a>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-            <div className="card-action">
-              <form onSubmit={this.handleSubmit.bind(this)}>
-                <FormControl
-                  name="comment"
-                  placeholder="comment"
-                  type="text"
-                  value={this.state.comment}
-                  onChange={(e) => this.setState({ comment: e.target.value })}
-                />
-                <button className="btn waves-effect waves-light">
-                  send
-                </button>
-              </form>
+          <div className="">
+            <CommentList post={post}/>
+            <div className="card-action white-text">
+              <CommentForm postId={post.id}/>
             </div>
           </div>
         )}

@@ -46,7 +46,12 @@ class Header extends React.Component {
       );
     }
   }
+
   render() {
+    if (window.scrollX) {
+      console.log('eita')
+    }
+
     return (
       <nav className="teal ">
         <div className="container">
