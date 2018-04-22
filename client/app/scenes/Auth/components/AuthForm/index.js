@@ -1,6 +1,8 @@
 import React from 'react';
 import FormControl from '../../../components/FormControl';
 import { Link } from 'react-router-dom';
+import { ClipLoader } from 'react-spinners';
+import './style.scss';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -28,14 +30,14 @@ class AuthForm extends React.Component {
   }
 
   render() {
-    const { authType, data } = this.props;
+    const { authType, data, isSubmitting } = this.props;
     console.log('this.props', this.props)
     const signUp = authType === 'signUp';
     return (
       <div className="row page-content">
         <div className="col s12 offset-m3 m6">
-          <div className="card blue-grey darken-1">
-            <div className="card-content white-text">
+          <div className="card blue-grey darken-1 ">
+            <div className="card-content white-text animated fadeIn">
               <span className="card-title">{signUp ? 'Sign Up' : 'Log In'}</span>
               <form onSubmit={this.handleSubmit.bind(this)}>
                 {signUp && (
@@ -80,13 +82,27 @@ class AuthForm extends React.Component {
                   />
                 )}
                 <div className="">
-                  <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <i className="material-icons right">send</i>
-                    {data.loading && 'Loading porra!'}
+                  <button className="btn waves-effect waves-light" type="submit" name="action">
+                    Submit
+                    {isSubmitting ? (
+                      <span className="loader">
+                        <ClipLoader
+                          color={'#ffffff'}
+                          size={18}
+                          loading={isSubmitting}
+                        />
+                      </span>
+                    ) : (
+                      <i className="material-icons right">send</i>
+                    )}
                   </button>
-                  {this.props.errors.map(error => {
-                    return (<div key={error}>{error}</div>);
-                  })}
+                  {this.props.errors.length > 0 && (
+                    <div className="error-box">
+                      {this.props.errors.map(error => {
+                        return (<div key={error}>{error}</div>);
+                      })}
+                    </div>
+                  )}
                 </div>
               </form>
             </div>

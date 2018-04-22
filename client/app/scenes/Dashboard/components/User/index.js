@@ -12,6 +12,22 @@ class User extends React.Component {
     }
   }
 
+  componentWillMount() {
+    const { data, history } = this.props
+
+    if (!data.user) {
+      history.push('/login');
+    }
+  }
+
+  componentWillUpdate(nextProps) {
+    const { history } = this.props;
+
+    if (!nextProps.data.user) {
+      history.push('/login');
+    }
+  }
+
   toggleEditInfo() {
     this.setState((prevState) => ({
       editInfo: !prevState.editInfo,

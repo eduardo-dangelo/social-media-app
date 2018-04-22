@@ -32,16 +32,16 @@ class CommentList extends React.Component {
                     <div className="card-content">
                       {comment.content}
                     </div>
-                    <div className="card-action">
-                      <a
-                        onClick={() => this.handleLike(comment.id, comment.likes)}
-                        className="like-button"
-                      >
-                        <span>{comment.likes}</span>
-                        {' '}
-                        <i className="material-icons">thumb_up</i>
-                      </a>
-                    </div>
+                    {/*<div className="card-action">*/}
+                      {/*<a*/}
+                        {/*onClick={() => this.handleLike(comment.id, comment.likes)}*/}
+                        {/*className="like-button"*/}
+                      {/*>*/}
+                        {/*<span>{comment.likes}</span>*/}
+                        {/*{' '}*/}
+                        {/*<i className="material-icons">thumb_up</i>*/}
+                      {/*</a>*/}
+                    {/*</div>*/}
                   </div>
                 );
               })}

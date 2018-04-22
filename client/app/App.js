@@ -1,6 +1,5 @@
 import React from 'react';
 import Shell from './scenes/Shell';
-import Auth from './scenes/Auth';
 import Login from './scenes/Auth/components/Login';
 import SignUp from './scenes/Auth/components/SignUp';
 import Dashboard from './scenes/Dashboard';

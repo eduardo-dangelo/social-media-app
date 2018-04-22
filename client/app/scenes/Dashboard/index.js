@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
     return (
       <div className="row">
         <div className="col s3">
-          <User/>
+          <User {...this.props}/>
         </div>
         <div className="col s6">
           <Posts/>

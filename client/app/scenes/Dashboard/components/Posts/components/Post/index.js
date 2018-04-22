@@ -46,14 +46,14 @@ class Post extends React.Component {
           <p>{post.content}</p>
         </div>
         <div className="card-action">
-          <a
+          {/*<a
             // onClick={() => this.handleLike(id, likes)}
             className="like-button"
           >
             <span>{post.likes}</span>
             {' '}
             <i className="material-icons">thumb_up</i>
-          </a>
+          </a>*/}
           <a className="comment-button" onClick={this.showComments.bind(this)}>
             {post.comments.length} comments
             <i className={`material-icons animated${showComments ? ' wobble' : ' pulse'}`}>{showComments ? 'chat' : 'chat_bubble'}</i>

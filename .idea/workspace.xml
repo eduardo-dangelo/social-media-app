@@ -5,22 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e7e312a-b1bf-4c75-9bea-7a057f0bb8d1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/client/app/mutations/LikeComment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/app/mutations/LikePost.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/app/queries/Users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Likes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/components/CommentForm/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/components/CommentList/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Users/img/user-img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Users/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/scenes/Auth/components/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/scenes/Auth/components/Login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/scenes/Auth/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/scenes/Auth/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/components/CommentList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/components/CommentList/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/comments/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/User/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/scenes/Dashboard/components/User/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/app/scenes/Dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/scenes/Dashboard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/scenes/Shell/components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/scenes/Shell/components/Header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/scenes/Shell/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/scenes/Shell/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,10 +31,40 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/index.js">
+        <entry file="file://$PROJECT_DIR$/client/app/scenes/Auth/components/Login/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+              <folding>
+                <element signature="e#53#94#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".babelrc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.babelrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="63" column="38" lean-forward="true" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+              <caret line="99" column="45" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="45" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -44,10 +73,10 @@
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/components/CommentForm/index.js">
+        <entry file="file://$PROJECT_DIR$/client/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+            <state relative-caret-position="162">
+              <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -55,14 +84,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/components/CommentList/index.js">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="18">
+              <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-57">
+              <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -80,6 +124,7 @@
       <find>Login</find>
       <find>graphql</find>
       <find>console.log</find>
+      <find>ing</find>
     </findStrings>
     <replaceStrings>
       <replace>comment</replace>
@@ -100,8 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/models/index.js" />
-        <option value="$PROJECT_DIR$/server/schema/types/messageType.js" />
         <option value="$PROJECT_DIR$/server/schema/types/rootQuerytype.js" />
         <option value="$PROJECT_DIR$/server/schema/types/postType.js" />
         <option value="$PROJECT_DIR$/server/models/message.js" />
@@ -123,20 +166,14 @@
         <option value="$PROJECT_DIR$/client/app/scenes/Auth/mutations/SignUp.js" />
         <option value="$PROJECT_DIR$/client/app/scenes/Auth/SignUp/index.js" />
         <option value="$PROJECT_DIR$/client/app/scenes/Auth/style.scss" />
-        <option value="$PROJECT_DIR$/client/app/App.js" />
         <option value="$PROJECT_DIR$/client/app/scenes/Shell/style.scss" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/components/User/components/EditUserInfo/index.js" />
         <option value="$PROJECT_DIR$/client/app/queries/AllPosts.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/client/app/scenes/Auth/components/Login/index.js" />
         <option value="$PROJECT_DIR$/client/app/scenes/Auth/components/SignUp/index.js" />
-        <option value="$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/index.js" />
-        <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/components/User/index.js" />
         <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/comments/index.js" />
         <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/index.js" />
         <option value="$PROJECT_DIR$/client/app/queries/Users.js" />
-        <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/index.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Users/index.js" />
         <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/style.scss" />
@@ -149,8 +186,16 @@
         <option value="$PROJECT_DIR$/client/app/mutations/LikeComment.js" />
         <option value="$PROJECT_DIR$/client/app/mutations/LikePost.js" />
         <option value="$PROJECT_DIR$/client/app/mutations/AddCommentToPost.js" />
-        <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/index.js" />
         <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/components/CommentList/index.js" />
+        <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/index.js" />
+        <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/components/User/index.js" />
+        <option value="$PROJECT_DIR$/client/app/scenes/Dashboard/index.js" />
+        <option value="$PROJECT_DIR$/client/app/scenes/Auth/components/Login/index.js" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/client/app/App.js" />
+        <option value="$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/index.js" />
+        <option value="$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/style.scss" />
       </list>
     </option>
   </component>
@@ -175,9 +220,10 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1035" />
-    <option name="width" value="895" />
-    <option name="height" value="1040" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -239,93 +285,6 @@
             <path>
               <item name="social-media-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="social-media-app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="mutations" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="social-media-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="social-media-app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scenes" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="social-media-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="social-media-app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scenes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="social-media-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="social-media-app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scenes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="social-media-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="social-media-app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scenes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Posts" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="social-media-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="social-media-app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scenes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Posts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="social-media-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="social-media-app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scenes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Posts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Post" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="social-media-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="social-media-app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scenes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Posts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Post" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="social-media-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="social-media-app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scenes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Users" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="social-media-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="social-media-app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="server" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -351,7 +310,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="SearchEverywhereHistoryKey" value="Auth&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../graphql-react-course/Lyrical-GraphQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../redux-playground" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
@@ -402,7 +361,7 @@
       <workItem from="1523044460255" duration="1095000" />
       <workItem from="1523731955820" duration="18111000" />
       <workItem from="1523991919665" duration="11481000" />
-      <workItem from="1524256863681" duration="8612000" />
+      <workItem from="1524256863681" duration="16466000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1522278636051</created>
@@ -544,11 +503,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524000198877</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="DASHBOARD: like and other stuff">
+      <created>1524309632226</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1524309632226</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157996000" />
+    <option name="totallyTimeSpent" value="165850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -560,10 +526,11 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49555555" weight="0.48005697" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2080537" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49555555" visible="true" weight="0.021367522" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2080537" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -574,7 +541,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +593,8 @@
     <MESSAGE value="DASHBOARD: User component" />
     <MESSAGE value="DASHBOARD: post component" />
     <MESSAGE value="DASHBOARD: Post: add comment feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="DASHBOARD: Post: add comment feature" />
+    <MESSAGE value="DASHBOARD: like and other stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="DASHBOARD: like and other stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -642,20 +609,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/models/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/schema/types/rootQuerytype.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/schema/types/chatType.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -741,16 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/scenes/Auth/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/mutations/Logout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -772,34 +715,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -841,30 +760,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/scenes/Auth/components/Login/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="36" />
-          <folding>
-            <element signature="e#53#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/mutations/SignUp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="90" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="82" column="66" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -882,27 +781,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/components/User/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="35" column="16" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="35" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/queries/AllPosts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -911,6 +793,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -938,13 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -989,6 +867,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/mutations/LikeComment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="49" column="57" lean-forward="true" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/components/CommentForm/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -999,30 +894,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/index.js">
+    <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/components/User/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="63" column="38" lean-forward="true" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+        <state relative-caret-position="450">
+          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/mutations/LikeComment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/components/Posts/components/Post/components/CommentList/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state relative-caret-position="492">
+          <caret line="43" column="29" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="43" selection-end-column="29" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/scenes/Dashboard/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/scenes/Auth/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/scenes/Auth/components/Login/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+          <folding>
+            <element signature="e#53#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="99" column="45" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/scenes/Auth/components/AuthForm/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
