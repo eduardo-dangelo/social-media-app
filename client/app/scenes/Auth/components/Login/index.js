@@ -12,7 +12,7 @@ class Login extends React.Component {
 
     this.state = {
       errors: [],
-      isSubmitting: false
+      isSubmitting: false,
     };
   }
 
@@ -45,6 +45,7 @@ class Login extends React.Component {
           errors={this.state.errors}
           onSubmit={this.handleSubmit.bind(this)}
           isSubmitting={this.state.isSubmitting}
+          userAuth={this.state.userAuth}
           {...this.props}
         />
       </div>
