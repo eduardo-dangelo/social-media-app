@@ -2,6 +2,8 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import query from '../../../../queries/CurrentUser';
 import EditUserInfo from './components/EditUserInfo';
+import { ClipLoader } from 'react-spinners';
+import './style.scss';
 
 class User extends React.Component {
   constructor(props) {
@@ -41,32 +43,43 @@ class User extends React.Component {
     const user = data.user;
 
     if (!user) {
-      return <div>Loading...</div>
+      return (
+        <div className="card blue-grey darken-1">
+          <div className="card-content">
+            <ClipLoader
+              color={'#ffffff'}
+              size={18}
+              loading={!user}
+            />
+          </div>
+        </div>
+      );
     }
 
     return (
       <div>
-        <div className="card blue-grey darken-1">
-          <div className="card-image">
-            <img src={require('./img/user-img.jpg')}/>
-          </div>
+        <div className="card blue-grey darken-1 animated fadeInUp">
+          {/*<div className="card-image">*/}
+            {/*<img src={require('./img/user-img.jpg')}/>*/}
+            {/*<a className="btn-floating halfway-fab waves-effect waves-light blue-grey">*/}
+              {/*<i className="tiny material-icons">add_a_photo</i>*/}
+            {/*</a>*/}
+          {/*</div>*/}
           <div className="card-content white-text">
             {!editInfo ? (
-              <div>
-                <span className="card-title">
-                  {user.firstName} {user.lastName}
-                </span>
+              <div className="">
                 <p>{user.email}</p>
               </div>
             ) : (
-              <div>
+              <div className="animated fadeIn">
                 <EditUserInfo/>
               </div>
             )}
           </div>
           <div className="card-action">
-            <a onClick={this.toggleEditInfo.bind(this)}>
-              {!editInfo ? 'Edit info' : 'Back'}
+            <a className={'edit-profile-btn'} onClick={this.toggleEditInfo.bind(this)}>
+              <i className="material-icons">{!editInfo ? 'settings' : 'subdirectory_arrow_left'}</i>
+              {!editInfo ? ' Edit Profile' : ' Back'}
             </a>
           </div>
         </div>

@@ -6,6 +6,7 @@ class EditUserInfo extends React.Component {
     const { handleSubmit } = this.props;
     return (
       <form onSubmit={handleSubmit}>
+        <div className="card-title">Edit Profile</div>
         <FormControl
           name="firstName"
           type="text"

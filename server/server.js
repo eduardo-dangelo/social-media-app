@@ -8,6 +8,7 @@ const MongoStore = require('connect-mongo')(session);
 const schema = require('./schema/schema');
 const passport = require('passport');
 const passportConfig = require('./services/auth');
+const apolloUploadServer = require('apollo-upload-server');
 
 const app = express();
 
@@ -56,10 +57,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // app.use(bodyParser.json());
-app.use('/graphql', expressGraphQL({
-  schema,
-  graphiql: true
-}));
+app.use(
+  '/graphql',
+  expressGraphQL({ schema, graphiql: true }),
+  apolloUploadServer.apolloUploadExpress({ uploadDir: "./img" }),
+);
 
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpack = require('webpack');

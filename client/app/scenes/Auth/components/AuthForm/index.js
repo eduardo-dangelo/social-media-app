@@ -36,7 +36,7 @@ class AuthForm extends React.Component {
     return (
       <div className="row page-content">
         <div className="col s12 offset-m3 m6">
-          <div className={`card blue-grey darken-1`}>
+          <div className={`card blue-grey darken-1 animated fadeInUp`}>
             <div className="card-content white-text animated fadeIn">
               <span className="card-title">{signUp ? 'Sign Up' : 'Log In'}</span>
               <form onSubmit={this.handleSubmit.bind(this)}>
