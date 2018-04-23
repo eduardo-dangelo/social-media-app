@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const Post = mongoose.model('post');
 const Comment = mongoose.model('comment');
 const Chat = mongoose.model('chat');
+const User = mongoose.model('user');
 const AuthService = require('../../services/auth');
 
 const mutation = new GraphQLObjectType({
@@ -46,6 +47,20 @@ const mutation = new GraphQLObjectType({
       },
       resolve(parentValue, { email, password }, req) {
         return AuthService.login({ email, password, req });
+      }
+    },
+
+    updateUser: {
+      type: UserType,
+      args: {
+        id: { type: GraphQLID },
+        firstName: { type: GraphQLString },
+        lastName: { type: GraphQLString },
+        dob: { type: GraphQLString },
+        description: { type: GraphQLString }
+      },
+      resolve(parentValue, args) {
+        return User.update(args);
       }
     },
 

@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const lodash = require('lodash');
 
 // Every user has an email and password.  The password is not stored as
 // plain text - see the authentication helpers below.
@@ -10,6 +11,8 @@ const UserSchema = new Schema({
   lastName: String,
   email: String,
   password: String,
+  dob: String,
+  description: String,
   // posts: [{
   //   type: Schema.Types.ObjectId,
   //   ref: 'post'
@@ -33,6 +36,34 @@ UserSchema.pre('save', function save(next) {
     });
   });
 });
+
+UserSchema.statics.update = function(value) {
+  const user = this;
+  return user.findById(value.id)
+    .populate('users')
+    .then(user => {
+      if (value.firstName) {
+        user.firstName = value.firstName;
+      }
+
+      if (value.lastName) {
+        user.lastName = value.lastName;
+      }
+
+      if (value.dob) {
+        user.dob = value.dob;
+      }
+
+      if (value.description) {
+        user.description = value.description;
+      }
+
+      return user;
+    })
+    .catch((error) => {
+      return error;
+    });
+}
 
 UserSchema.statics.loadUser = function(id) {
   return this.findById(id)
