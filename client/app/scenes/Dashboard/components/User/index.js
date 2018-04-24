@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import query from '../../../../queries/CurrentUser';
+import mutation from '../../../../mutations/UpdateUser';
 import EditUserInfo from './components/EditUserInfo';
 import { ClipLoader } from 'react-spinners';
 import './style.scss';
@@ -35,6 +36,17 @@ class User extends React.Component {
       editInfo: !prevState.editInfo,
     }))
   }
+  
+  handleSubmit(values) {
+    this.props.mutate({
+      variables: { id: values.id, firstName: values.firstName, lastName: values.lastName, dob: values.dob},
+      refetchQueries: [{ query }],
+    }).then(
+      this.setState({
+        editInfo: false,
+      })
+    )
+  }
 
   render() {
     // console.log('this.props', this.props)
@@ -68,11 +80,12 @@ class User extends React.Component {
           <div className="card-content white-text">
             {!editInfo ? (
               <div className="">
+                <div className="card-title">Welcome {user.firstName}</div>
                 <p>{user.email}</p>
               </div>
             ) : (
               <div className="animated fadeIn">
-                <EditUserInfo/>
+                <EditUserInfo user={user} onSubmit={this.handleSubmit.bind(this)}/>
               </div>
             )}
           </div>
@@ -88,4 +101,6 @@ class User extends React.Component {
   }
 }
 
-export default graphql(query)(User);
+export default graphql(query)(
+  graphql(mutation)(User),
+);

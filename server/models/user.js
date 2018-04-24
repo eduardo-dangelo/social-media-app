@@ -54,11 +54,8 @@ UserSchema.statics.update = function(value) {
         user.dob = value.dob;
       }
 
-      if (value.description) {
-        user.description = value.description;
-      }
-
-      return user;
+      return Promise.all([user.save()])
+        .then(([user]) => user);
     })
     .catch((error) => {
       return error;
