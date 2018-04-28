@@ -1,6 +1,6 @@
 import React from 'react';
 import User from './components/User';
-import Users from './components/Users';
+import Messenger from './components/Messenger';
 import Posts from './components/Posts';
 
 class Dashboard extends React.Component {
@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
           <Posts/>
         </div>
         <div className="col s3">
-          <Users/>
+          <Messenger/>
         </div>
       </div>
     )

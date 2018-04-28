@@ -3,20 +3,15 @@ import { graphql } from 'react-apollo';
 import query from '../../../../queries/Users';
 import { map } from 'lodash';
 import { Link } from 'react-router-dom';
+import UserList from './components/UserList';
+import ChatRoom from './components/ChatRoom';
 
 class Users extends React.Component {
   render() {
-    const { data } = this.props;
-
     return (
-      <div className="collection z-depth-2">
-        {map(data.users, (user, key) => {
-          return (
-            <Link to="#" className="collection-item " key={key}>
-              {user.email}
-            </Link>
-          );
-        })}
+      <div>
+        <ChatRoom/>
+        <UserList/>
       </div>
     )
   }
