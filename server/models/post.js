@@ -7,7 +7,7 @@ const PostSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'user'
   },
-  // userId: { type: Schema.Types.ObjectId },
+  userId: { type: Schema.Types.ObjectId },
   content: { type: String },
   likes: { type: Number, default: 0 },
   comments: [{
@@ -16,12 +16,14 @@ const PostSchema = new Schema({
   }],
 });
 
-PostSchema.statics.addComment = function(id, content) {
+PostSchema.statics.addComment = function(id, content, user) {
   const Comment = mongoose.model('comment');
+      // const User = mongoose.model('user');
+      // const user = User.findById(user);
 
   return this.findById(id)
     .then(post => {
-      const comment = new Comment({ content, post })
+      const comment = new Comment({ content, post, user })
       post.comments.push(comment)
       return Promise.all([comment.save(), post.save()])
         .then(([comment, post]) => post);

@@ -13,6 +13,8 @@ const ChatType = new GraphQLObjectType({
     users: {
       type: new GraphQLList(UserType),
       resolve(parentValue, args, req) {
+        console.log('parentValue', parentValue)
+        console.log('args', args)
         return Chat.findUsers(parentValue.userId)
       }
     },

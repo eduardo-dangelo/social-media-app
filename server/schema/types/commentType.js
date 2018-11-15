@@ -7,7 +7,10 @@ const {
   GraphQLInt,
   GraphQLString
 } = graphql;
-const Comment = mongoose.model('comment');
+// const Comment = mongoose.model('comment');
+const User = mongoose.model('user');
+// const UserType = require('./userType');
+
 
 const CommentType = new GraphQLObjectType({
   name:  'CommentType',
@@ -15,15 +18,14 @@ const CommentType = new GraphQLObjectType({
     id: { type: GraphQLID },
     likes: { type: GraphQLInt },
     content: { type: GraphQLString },
-    post: {
-      type: require('./postType'),
-      resolve(parentValue) {
-        return Comment.findById(parentValue).populate('post')
-          .then(comment => {
-            return comment.post
-          });
+    user: {
+      type: require('./userType'),
+      resolve(parentValue, args, req) {
+        console.log('parentValue', parentValue)
+        console.log('args', args)
+        return User.loadUser(parentValue.user)
       }
-    }
+    },
   })
 });
 

@@ -17,9 +17,12 @@ class UserListItem extends React.Component {
   }
 
   openMessenger() {
+    const { onOpenMessenger, user } = this.props;
     this.setState({
       moreInfo: false
     })
+
+    onOpenMessenger(user);
   }
 
   render() {

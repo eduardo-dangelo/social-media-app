@@ -108,10 +108,11 @@ const mutation = new GraphQLObjectType({
       type: PostType,
       args: {
         content: { type: GraphQLString },
-        id: { type: GraphQLID }
+        id: { type: GraphQLID },
+        userId: { type: GraphQLID }
       },
-      resolve(parentValue, { content, id }) {
-        return Post.addComment(id, content);
+      resolve(parentValue, { content, id, userId }) {
+        return Post.addComment(id, content, userId);
       }
     },
 
@@ -145,7 +146,7 @@ const mutation = new GraphQLObjectType({
       type: ChatType,
       args: { userId: { type: GraphQLID } },
       resolve(parentValue, { userId }) {
-        return (new Chat({ userId })).save()
+        return (new Chat({userId})).save()
       }
     },
 

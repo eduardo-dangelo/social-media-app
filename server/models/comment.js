@@ -2,12 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CommentSchema = new Schema({
-  post: {
-    type: Schema.Types.ObjectId,
-    ref: 'post'
-  },
   likes: { type: Number, default: 0 },
-  content: { type: String }
+  content: { type: String },
+  // userId: { type: Schema.Types.ObjectId },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'user'
+  },
 });
 
 CommentSchema.statics.like = function(id) {

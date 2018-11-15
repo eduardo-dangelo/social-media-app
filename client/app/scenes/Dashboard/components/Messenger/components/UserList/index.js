@@ -7,6 +7,12 @@ import { ClipLoader } from 'react-spinners';
 import UserListItem from './components/UserListItem';
 
 class UserList extends React.Component {
+  openMessenger(user) {
+    const { onOpenMessenger } = this.props;
+
+    onOpenMessenger(user);
+  }
+
   render() {
     const { data } = this.props;
     const users = data.users;
@@ -26,10 +32,14 @@ class UserList extends React.Component {
     }
 
     return (
-      <div className="collection z-depth-2">
-        <Link to="#" className="collection-header"><h6>Users</h6></Link>
+      <div className="collection with-header z-depth-2">
+        <div className="collection-header blue-grey darken-1 white-text">
+          <div className="cart-title">
+            Users
+          </div>
+        </div>
         {map(data.users, (user, key) => {
-          return <UserListItem user={user} key={key}/>;
+          return <UserListItem onOpenMessenger={this.openMessenger.bind(this)} user={user} key={key}/>;
         })}
       </div>
     )
