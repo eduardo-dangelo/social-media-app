@@ -80,11 +80,22 @@ const mutation = new GraphQLObjectType({
 
     likePost: {
       type: PostType,
-      args: { id: { type: GraphQLID } },
-      resolve(parentValue, { id }) {
-        return Post.like(id);
+      args: {
+        id: { type: GraphQLID },
+        userId: { type: GraphQLID }
+      },
+      resolve(parentValue, { id, userId }) {
+        return Post.like(id, userId);
       }
     },
+
+    // likePost: {
+    //   type: PostType,
+    //   args: { id: { type: GraphQLID } },
+    //   resolve(parentValue, { id }) {
+    //     return Post.like(id);
+    //   }
+    // },
 
     unlikePost: {
       type: PostType,
@@ -116,11 +127,22 @@ const mutation = new GraphQLObjectType({
       }
     },
 
+    // likeComment: {
+    //   type: CommentType,
+    //   args: { id: { type: GraphQLID } },
+    //   resolve(parentValue, { id }) {
+    //     return Comment.like(id);
+    //   }
+    // },
+
     likeComment: {
       type: CommentType,
-      args: { id: { type: GraphQLID } },
-      resolve(parentValue, { id }) {
-        return Comment.like(id);
+      args: {
+        id: { type: GraphQLID },
+        userId: { type: GraphQLID }
+      },
+      resolve(parentValue, { id, userId }) {
+        return Comment.like(id, userId);
       }
     },
 
