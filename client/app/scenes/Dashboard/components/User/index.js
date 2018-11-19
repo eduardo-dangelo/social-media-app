@@ -56,10 +56,10 @@ class User extends React.Component {
 
     if (!user) {
       return (
-        <div className="card blue-grey darken-1">
+        <div className="card">
           <div className="card-content">
             <ClipLoader
-              color={'#ffffff'}
+              color={'#000000'}
               size={18}
               loading={!user}
             />
@@ -70,14 +70,14 @@ class User extends React.Component {
 
     return (
       <div>
-        <div className="card blue-grey darken-1 animated fadeInUp">
+        <div className="card animated fadeIn">
           {/*<div className="card-image">*/}
             {/*<img src={require('./img/user-img.jpg')}/>*/}
             {/*<a className="btn-floating halfway-fab waves-effect waves-light blue-grey">*/}
               {/*<i className="tiny material-icons">add_a_photo</i>*/}
             {/*</a>*/}
           {/*</div>*/}
-          <div className="card-content white-text">
+          <div className="card-content">
             {!editInfo ? (
               <div className="">
                 <div className="card-title">Welcome {user.firstName}</div>

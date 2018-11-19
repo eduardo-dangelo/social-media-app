@@ -19,10 +19,10 @@ class UserList extends React.Component {
 
     if (!users) {
       return (
-        <div className="card blue-grey darken-1">
+        <div className="card">
           <div className="card-content">
             <ClipLoader
-              color={'#ffffff'}
+              color={'#000000'}
               size={18}
               loading={!users}
             />
@@ -32,8 +32,8 @@ class UserList extends React.Component {
     }
 
     return (
-      <div className="collection with-header z-depth-2">
-        <div className="collection-header blue-grey darken-1 white-text">
+      <div className="collection with-header">
+        <div className="collection-header teal white-text">
           <div className="cart-title">
             Users
           </div>

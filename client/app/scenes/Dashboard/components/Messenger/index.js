@@ -17,7 +17,7 @@ class Users extends React.Component {
 
   openMessenger() {
     this.setState({
-      isChatOpen: true,
+      isChatOpen: false,
     })
   }
 

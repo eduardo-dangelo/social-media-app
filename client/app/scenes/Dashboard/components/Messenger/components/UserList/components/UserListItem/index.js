@@ -31,15 +31,15 @@ class UserListItem extends React.Component {
     return (
       <div>
         <a onClick={this.toggleMoreInfo.bind(this)} className={`collection-item ${moreInfo && ''}`}>
-          {user.email}
+          {user.firstName + ' ' + user.lastName}
         </a>
         {moreInfo && (
           <div
-            onClick={this.openMessenger.bind(this)}
-            className="open-mssg-btn collection-item active"
+            // onClick={this.openMessenger.bind(this)}
+            className="collection-item active"
           >
-            Open Messenger
-            <i className="material-icons">email</i>
+            {user.email}
+            {/*<i className="material-icons">email</i>*/}
           </div>
         )}
       </div>

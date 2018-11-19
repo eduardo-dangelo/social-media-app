@@ -12,3 +12,14 @@
     align-items: center;
   }
 }
+
+.page-container {
+  max-width: 1240px;
+  overflow: auto;
+  margin: auto;
+
+  @media all and (max-width: 1240px) {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

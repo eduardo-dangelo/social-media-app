@@ -31,13 +31,12 @@ class AuthForm extends React.Component {
 
   render() {
     const { authType, data, isSubmitting, userAuth } = this.props;
-    console.log('this.props', this.props)
     const signUp = authType === 'signUp';
     return (
       <div className="row page-content">
         <div className="col s12 offset-m3 m6">
-          <div className={`card blue-grey darken-1 animated fadeInUp`}>
-            <div className="card-content white-text animated fadeIn">
+          <div className={`card animated fadeIn`}>
+            <div className="card-content animated fadeIn">
               <span className="card-title">{signUp ? 'Sign Up' : 'Log In'}</span>
               <form onSubmit={this.handleSubmit.bind(this)}>
                 {signUp && (

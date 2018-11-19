@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from './components/Header';
-// import Footer from './components/Footer';
-import './style.scss';
+import Header from './components/Header'
+import './style.scss'
 
 class Shell extends React.Component {
   render() {
@@ -12,8 +11,6 @@ class Shell extends React.Component {
         <div className="container ">
           {children}
         </div>
-        {/*<Footer/>*/}
-        {/*<img src={require('./img/pc.jpg')} alt=""/>*/}
       </div>
     )
   }

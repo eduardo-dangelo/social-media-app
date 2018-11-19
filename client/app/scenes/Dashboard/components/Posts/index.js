@@ -12,10 +12,10 @@ class Posts extends React.Component {
 
     if (!data.posts) {
       return (
-        <div className="card blue-grey darken-1">
+        <div className="card">
           <div className="card-content">
             <ClipLoader
-              color={'#ffffff'}
+              color={'#000000'}
               size={18}
               loading={!data.posts}
             />
