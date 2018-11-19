@@ -24,13 +24,13 @@ class CommentList extends React.Component {
     return (
       <div>
         {post.comments.length > 0 && (
-          <div className="card-content comments-container white-text blue-grey darken-2">
+          <div className="card-content comments-container darken-1">
             <div className="row">
               {map(post.comments, (comment, key) => {
                 return (
-                  <div key={key} className="col sm12 m10 right card-panel blue-grey darken-1 animated fadeIn">
+                  <div key={key} className="col sm12 m10 right card-panel animated fadeIn">
                     <div className="card-content">
-                      {comment.content}
+                      <strong>{comment.user.firstName} {comment.user.lastName}</strong> {comment.content}
                     </div>
                     {/*<div className="card-action">*/}
                       {/*<a*/}

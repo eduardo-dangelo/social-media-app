@@ -40,20 +40,20 @@ class Post extends React.Component {
     console.log('this.props.data', this.props.data)
 
     return (
-      <div className="card blue-grey darken-1">
-        <div className="card-content white-text">
-          <span className="cart-title">{post.title}</span>
-          <p>{post.content}</p>
+      <div className="card">
+        <div className="card-content">
+          <span className="cart-title">{post.user.firstName}  {post.user.lastName}</span>
+          <h5>{post.content}</h5>
         </div>
         <div className="card-action">
-          {/*<a
+          <a
             // onClick={() => this.handleLike(id, likes)}
             className="like-button"
           >
-            <span>{post.likes}</span>
+            <span>{post.likes.length}</span>
             {' '}
             <i className="material-icons">thumb_up</i>
-          </a>*/}
+          </a>
           <a className="comment-button" onClick={this.showComments.bind(this)}>
             {post.comments.length} comments
             <i className={`material-icons animated${showComments ? ' wobble' : ' pulse'}`}>{showComments ? 'chat' : 'chat_bubble'}</i>
@@ -62,7 +62,7 @@ class Post extends React.Component {
         {showComments && (
           <div className="">
             <CommentList post={post}/>
-            <div className="card-action white-text">
+            <div className="card-action">
               <CommentForm postId={post.id}/>
             </div>
           </div>

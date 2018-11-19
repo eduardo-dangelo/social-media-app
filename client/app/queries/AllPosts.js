@@ -6,12 +6,29 @@ export default gql`
     id
     title
     content
-    likes
+    user {
+      firstName
+      lastName
+    }
+    likes {
+      user {
+        firstName
+        lastName
+      }
+    }
     comments {
       id
-      likes
       content
-  
+      user {
+        firstName
+        lastName
+      }
+      likes {
+        user {
+          firstName
+          lastName
+        }
+      }
     }
   }
 }
