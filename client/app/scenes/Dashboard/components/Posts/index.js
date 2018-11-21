@@ -1,23 +1,24 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
-import query from '../../../../queries/AllPosts';
+import './style.scss';
 import { map } from 'lodash';
-import './style.scss';;
 import Post from './components/Post';
+import { compose, graphql } from 'react-apollo';
 import { ClipLoader } from 'react-spinners';
+import PostForm from './components/PostForm';
+import { allPosts, currentUser } from '../../../../queries';
 
-class Posts extends React.Component {
-  render() {
-    const { data } = this.props;
+class Posts extends React.PureComponent {
+  renderPosts(userId) {
+    const { allPosts } = this.props;
 
-    if (!data.posts) {
+    if (!allPosts.posts) {
       return (
         <div className="card">
           <div className="card-content">
             <ClipLoader
-              color={'#000000'}
               size={18}
-              loading={!data.posts}
+              color={'#000000'}
+              loading={!allPosts.posts}
             />
           </div>
         </div>
@@ -26,14 +27,40 @@ class Posts extends React.Component {
 
     return (
       <div>
-        {map(data.posts, (post, key) => {
+        {map(allPosts.posts.reverse(), (post, key) => {
           return (
-            <Post key={key} query={query} post={post} {...this.props}/>
+            <Post
+              key={post.id}
+              post={post}
+              userId={userId}
+              query={allPosts}
+              onUpdateRequired={this.refetchPosts.bind(this)}
+              {...this.props}
+            />
           );
         })}
       </div>
     )
   }
+
+  render() {
+    const { currentUser } = this.props
+    const userId = currentUser.user && currentUser.user.id
+    return (
+      <div>
+        <PostForm userId={userId} onCreatePost={this.refetchPosts.bind(this)}/>
+        {this.renderPosts(userId)}
+      </div>
+    )
+  }
+
+  refetchPosts() {
+    const { allPosts } = this.props
+    allPosts.refetch()
+  }
 }
 
-export default graphql(query)(Posts);
+export default compose(
+  graphql(currentUser, { name: 'currentUser'}),
+  graphql(allPosts, { name: 'allPosts'})
+)(Posts);

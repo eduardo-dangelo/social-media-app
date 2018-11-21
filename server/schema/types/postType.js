@@ -11,7 +11,7 @@ const PostType = new GraphQLObjectType({
   name: 'PostType',
   fields: () => ({
     id: { type: GraphQLID },
-    title: { type: GraphQLString },
+    // title: { type: GraphQLString },
     content: { type: GraphQLString },
     // likes: { type: GraphQLInt },
     user: {

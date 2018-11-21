@@ -26,22 +26,22 @@ class CommentList extends React.Component {
         {post.comments.length > 0 && (
           <div className="card-content comments-container darken-1">
             <div className="row">
-              {map(post.comments, (comment, key) => {
+              {map(post.comments, (comment) => {
                 return (
-                  <div key={key} className="col sm12 m10 right card-panel animated fadeIn">
+                  <div key={comment.id} className="col sm12 m10 right card-panel animated fadeIn">
                     <div className="card-content">
                       <strong>{comment.user.firstName} {comment.user.lastName}</strong> {comment.content}
                     </div>
-                    {/*<div className="card-action">*/}
-                      {/*<a*/}
-                        {/*onClick={() => this.handleLike(comment.id, comment.likes)}*/}
-                        {/*className="like-button"*/}
-                      {/*>*/}
-                        {/*<span>{comment.likes}</span>*/}
-                        {/*{' '}*/}
-                        {/*<i className="material-icons">thumb_up</i>*/}
-                      {/*</a>*/}
-                    {/*</div>*/}
+                    <div className="card-action">
+                      <a
+                        onClick={() => this.handleLike(comment.id, comment.likes)}
+                        className="like-button"
+                      >
+                        <span>{comment.likes.length}</span>
+                        {' '}
+                        <i className="material-icons">thumb_up</i>
+                      </a>
+                    </div>
                   </div>
                 );
               })}
