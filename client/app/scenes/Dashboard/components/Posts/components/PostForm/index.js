@@ -2,31 +2,35 @@ import React from 'react';
 import FormControl from "../../../../../components/FormControl/index";
 import { graphql, compose } from 'react-apollo';
 import { addPost } from '../../../../../../mutations/Post';
-import { currentUser } from '../../../../../../queries';
 
-class PostForm extends React.Component {
+class PostForm extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
       showComments: false,
       content: '',
+      submitting: false
     }
   }
 
   handleSubmit(e) {
     const { postId, addPost, userId, onCreatePost } = this.props;
     e.preventDefault();
+    this.setState({ submitting: true })
 
     addPost({
       variables: { id: postId, content: this.state.content, userId },
     }).then(
-      this.setState({ content: '' }),
-      onCreatePost()
+      setTimeout(() => (
+        this.setState({ content: '', submitting: false }),
+        onCreatePost()
+      ), 1000)
     );
   }
 
   render() {
+    const { submitting } = this.state
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
         <div className="card">

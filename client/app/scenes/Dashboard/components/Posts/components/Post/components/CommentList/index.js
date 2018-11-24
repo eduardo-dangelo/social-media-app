@@ -1,25 +1,11 @@
 import React from 'react';
 import { map } from 'lodash';
-import { graphql } from 'react-apollo';
-import mutation from '../../../../../../../../mutations/LikeComment';
+import Comment from './Comment';
 
 class CommentList extends React.Component {
-  handleLike(id, likes) {
-    this.props.mutate({
-      variables: { id },
-      optimisticResponse: {
-        __typename: 'Mutation',
-        likeComment: {
-          id,
-          __typename: 'PostType',
-          likes: likes + 1
-        }
-      }
-    })
-  }
 
   render() {
-    const { post } = this.props;
+    const { post, userId, onUpdateRequired } = this.props;
 
     return (
       <div>
@@ -28,21 +14,12 @@ class CommentList extends React.Component {
             <div className="row">
               {map(post.comments, (comment) => {
                 return (
-                  <div key={comment.id} className="col sm12 m10 right card-panel animated fadeIn">
-                    <div className="card-content">
-                      <strong>{comment.user.firstName} {comment.user.lastName}</strong> {comment.content}
-                    </div>
-                    <div className="card-action">
-                      <a
-                        onClick={() => this.handleLike(comment.id, comment.likes)}
-                        className="like-button"
-                      >
-                        <span>{comment.likes.length}</span>
-                        {' '}
-                        <i className="material-icons">thumb_up</i>
-                      </a>
-                    </div>
-                  </div>
+                  <Comment
+                    key={comment.id}
+                    comment={comment}
+                    userId={userId}
+                    onUpdateRequired={onUpdateRequired}
+                  />
                 );
               })}
             </div>
@@ -53,4 +30,4 @@ class CommentList extends React.Component {
   }
 }
 
-export default graphql(mutation)(CommentList);
+export default CommentList;

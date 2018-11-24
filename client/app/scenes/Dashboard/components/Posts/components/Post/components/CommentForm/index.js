@@ -1,11 +1,11 @@
 import React from 'react';
 import FormControl from "../../../../../../../components/FormControl/index";
-import { graphql } from 'react-apollo';
-import mutation from '../../../../../../../../mutations/AddCommentToPost';
+import { compose, graphql } from 'react-apollo';
+import { addCommentToPost } from '../../../../../../../../mutations/Post';
 import currentUserQuery from '../../../../../../../../queries/CurrentUser';
 import allPostsQuery from '../../../../../../../../queries/AllPosts';
 
-class CommentForm extends React.Component {
+class CommentForm extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -18,13 +18,16 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     const { postId, onComment, userId } = this.props;
     e.preventDefault();
+    console.log('adding comment')
 
 
-    this.props.mutate({
+    this.props.addCommentToPost({
       variables: { id: postId, content: this.state.comment, userId },
     }).then(
-      this.setState({ comment: '' }),
-      onComment()
+      setTimeout(() => (
+        this.setState({ comment: '' }),
+        onComment()
+      ), 1000)
     );
   }
 
@@ -49,6 +52,7 @@ class CommentForm extends React.Component {
   }
 }
 
-export default graphql(mutation)(
-  graphql(currentUserQuery)(CommentForm)
-);
+export default compose(
+  graphql(addCommentToPost, { name: 'addCommentToPost'}),
+  graphql(currentUserQuery)
+)(CommentForm)

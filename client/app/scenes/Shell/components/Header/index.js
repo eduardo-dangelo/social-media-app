@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { graphql } from 'react-apollo';
 import mutation from '../../../../mutations/Logout';
 import query from '../../../../queries/CurrentUser';
+import logo from './img/graphql_logo_xxs.png'
 
 class Header extends React.Component {
   onLogout() {
@@ -57,7 +58,10 @@ class Header extends React.Component {
         <div className="container">
           <div className="">
             <Link to="/" className=" left">
-              <h5>Social Media App</h5>
+              <div className="page-title">
+                <img src={logo} alt=""/>
+                <h5>Social Media App</h5>
+              </div>
             </Link>
             <ul className="right">
               {this.renderButtons()}

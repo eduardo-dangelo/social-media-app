@@ -2,19 +2,30 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import query from '../../../../../../queries/Users';
 import { map } from 'lodash';
-import { Link } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
 import UserListItem from './components/UserListItem';
 
 class UserList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showList: false,
+    }
+  }
   openMessenger(user) {
     const { onOpenMessenger } = this.props;
 
     onOpenMessenger(user);
   }
 
+  toggleList() {
+    console.log('cale')
+    this.setState({ showList: !this.state.showList })
+  }
+
   render() {
     const { data } = this.props;
+    const { showList } = this.state;
     const users = data.users;
 
     if (!users) {
@@ -33,12 +44,12 @@ class UserList extends React.Component {
 
     return (
       <div className="collection with-header">
-        <div className="collection-header teal white-text">
-          <div className="cart-title">
+        <div className={`collection-header ${showList ? 'teal white-text' : ''}`}>
+          <div className="cart-title" onClick={this.toggleList.bind(this)}>
             Users
           </div>
         </div>
-        {map(data.users, (user, key) => {
+        {showList && map(data.users, (user, key) => {
           return <UserListItem onOpenMessenger={this.openMessenger.bind(this)} user={user} key={key}/>;
         })}
       </div>
