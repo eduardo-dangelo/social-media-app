@@ -14,7 +14,7 @@ class Comment extends React.Component {
 
 
   render() {
-    const { comment } = this.props;
+    const { comment, userId } = this.props;
     const { showComponent, liked } = this.state;
 
     return (
@@ -25,12 +25,14 @@ class Comment extends React.Component {
           {comment.content}
         </div>
         <div className="card-action">
-          <a
-            onClick={this.handleDelete.bind(this)}
-            className="like-button"
-          >
-            delete
-          </a>
+          {comment.user.id === userId && (
+            <a
+              onClick={this.handleDelete.bind(this)}
+              className="like-button"
+            >
+              delete
+            </a>
+          )}
           <a
             onClick={this.handleLike.bind(this)}
             className="like-button"

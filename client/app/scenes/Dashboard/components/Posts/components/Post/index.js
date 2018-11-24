@@ -66,7 +66,7 @@ class Post extends React.PureComponent {
         </div>
         {showComments && (
           <div className="">
-            <CommentList post={post} onUpdateRequired={onUpdateRequired}/>
+            <CommentList userId={userId} post={post} onUpdateRequired={onUpdateRequired}/>
             <div className="card-action">
               <CommentForm userId={userId} postId={post.id} onComment={onUpdateRequired}/>
             </div>
