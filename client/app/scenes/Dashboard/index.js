@@ -7,15 +7,16 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col s3">
+        <div className="col s12 m5 l4">
           <User {...this.props}/>
-        </div>
-        <div className="col s6">
-          <Posts/>
-        </div>
-        <div className="col s3">
           <Messenger/>
         </div>
+        <div className="col s12 m7 l8">
+          <Posts/>
+        </div>
+        {/*<div className="col s12 m4 l3">*/}
+          {/*<Messenger/>*/}
+        {/*</div>*/}
       </div>
     )
   }

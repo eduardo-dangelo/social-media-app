@@ -49,6 +49,7 @@ class PostForm extends React.PureComponent {
               className="btn waves-effect waves-light"
             >
               Post
+              <i className="material-icons right">send</i>
             </button>
           </div>
         </div>

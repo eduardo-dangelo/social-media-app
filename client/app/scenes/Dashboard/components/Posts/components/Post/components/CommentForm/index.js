@@ -45,7 +45,8 @@ class CommentForm extends React.PureComponent {
           type="submit"
           className="btn waves-effect waves-light"
         >
-          send
+          Comment
+          <i className="material-icons right">send</i>
         </button>
       </form>
     )

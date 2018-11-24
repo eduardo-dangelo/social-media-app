@@ -80,8 +80,14 @@ class User extends React.Component {
           <div className="card-content">
             {!editInfo ? (
               <div className="">
-                <div className="card-title">Welcome {user.firstName}</div>
-                <p>{user.email}</p>
+                <div className="card-title page-title">
+                  <i className={'material-icons'}>account_circle</i>
+                  Welcome {user.firstName}
+                </div>
+                <p className="page-title">
+                  <i className={'material-icons'}>email</i>
+                  {user.email}
+                </p>
               </div>
             ) : (
               <div className="animated fadeIn">

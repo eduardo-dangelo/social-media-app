@@ -19,7 +19,6 @@ class UserList extends React.Component {
   }
 
   toggleList() {
-    console.log('cale')
     this.setState({ showList: !this.state.showList })
   }
 
@@ -45,7 +44,7 @@ class UserList extends React.Component {
     return (
       <div className="collection with-header">
         <div className={`collection-header ${showList ? 'teal white-text' : ''}`}>
-          <div className="card-title page-title" onClick={this.toggleList.bind(this)}>
+          <div className="card-title page-title user-btn" onClick={this.toggleList.bind(this)}>
             <i className={'material-icons'}>account_circle</i>
             Users
           </div>

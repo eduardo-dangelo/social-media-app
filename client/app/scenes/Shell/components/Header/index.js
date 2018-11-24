@@ -54,7 +54,7 @@ class Header extends React.Component {
     }
 
     return (
-      <nav className="teal ">
+      <nav className="teal header">
         <div className="container">
           <div className="">
             <Link to="/" className=" left">

@@ -30,7 +30,7 @@ class Users extends React.Component {
   render() {
     const { isChatOpen } = this.state;
     return (
-      <div>
+      <div className="card">
         {isChatOpen ? (
           <ChatRoom
             onOpenUserList={this.openUserList.bind(this)}
