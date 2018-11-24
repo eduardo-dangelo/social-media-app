@@ -39,7 +39,7 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="page-content">
         <AuthForm
           authType="signUp"
           errors={this.state.errors}

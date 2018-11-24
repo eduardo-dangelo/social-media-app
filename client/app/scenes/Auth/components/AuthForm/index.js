@@ -33,8 +33,8 @@ class AuthForm extends React.Component {
     const { authType, data, isSubmitting, userAuth } = this.props;
     const signUp = authType === 'signUp';
     return (
-      <div className="row page-content">
-        <div className="col s12 offset-m3 m6">
+      <div className="row">
+        <div className="col s12 offset-m2 m8 offset-l3 l6">
           <div className={`card animated fadeIn`}>
             <div className="card-content animated fadeIn">
               <span className="card-title">{signUp ? 'Sign Up' : 'Log In'}</span>

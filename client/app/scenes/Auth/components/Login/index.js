@@ -39,7 +39,7 @@ class Login extends React.Component {
   render() {
     const { data } = this.props;
     return (
-      <div>
+      <div className="page-content">
         <AuthForm
           authType="login"
           errors={this.state.errors}
