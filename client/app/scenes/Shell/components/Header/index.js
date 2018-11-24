@@ -58,7 +58,7 @@ class Header extends React.Component {
         <div className="container">
           <div className="">
             <Link to="/" className=" left">
-              <div className="page-title">
+              <div className="page-title header-title">
                 <img src={logo} alt=""/>
                 <h5>Social Media App</h5>
               </div>
